@@ -1,12 +1,21 @@
 import model.Student;
+import model.StudentDB;
 
 public class Main {
     public static void main(String[] args) {
 
 
-        Student eva = new Student("Eva","Klein");
-        Student kai = new Student();
-        Student paula=new Student("Eva","Klein");
+        Student eva = new Student("Eva","Klein",1);
+        Student kai = new Student("Kai","Voss",2);
+        Student paula=new Student("Paula","Hase",3);
+        Student[] allStudents ={eva,kai,paula};
+        StudentDB cgn_java_22= new StudentDB(allStudents);
+       // System.out.println(allStudents[0]);
+       // System.out.println(allStudents[1]);
+       // System.out.println(allStudents[2]);
+        System.out.println(cgn_java_22.toString());
+
+
         /*kai.setBirthYear(2005) ;
         kai.setFirstName("Kai")  ;
         kai.setSecondName("Voss");

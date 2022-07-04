@@ -5,6 +5,7 @@ import java.util.Objects;
 public class Student {
     private String firstName;
     private String secondName;
+    private int studentID;
     private int birthYear;
     private int birthMonth;
     private int birthDay;
@@ -14,6 +15,11 @@ public class Student {
     private String courseName;
 
     public Student(){};
+    public Student (String firstName,String secondName,int studentId){
+        this.firstName=firstName;
+        this.secondName=secondName;
+        this.studentID=studentId;
+    }
     public Student(String firstName, String secondName){
         this.firstName=firstName;
         this.secondName=secondName;
@@ -22,12 +28,12 @@ public class Student {
     @Override
     public String toString(){
         String returnValue;
-        return "Name:"+this.getName()
-        +" Strasse:"+this.street
-        +" Postleitzahl "+this.postalCode
-        +" Stadt:"+this.city
-                +" Geburtsjahr:"+this.birthYear;
-     }
+        return "Name:"+this.getName();
+      }
+
+      public int getId(){
+        return this.studentID;
+      }
     public String getFirstName() {
         return firstName;
     }
