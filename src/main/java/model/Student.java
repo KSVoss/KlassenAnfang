@@ -1,3 +1,7 @@
+package model;
+
+import java.util.Objects;
+
 public class Student {
     private String firstName;
     private String secondName;
@@ -9,8 +13,36 @@ public class Student {
     private String postalCode;
     private String courseName;
 
+    public Student(){};
+    public Student(String firstName, String secondName){
+        this.firstName=firstName;
+        this.secondName=secondName;
+    }
+
+    @Override
+    public String toString(){
+        String returnValue;
+        return "Name:"+this.getName()
+        +" Strasse:"+this.street
+        +" Postleitzahl "+this.postalCode
+        +" Stadt:"+this.city
+                +" Geburtsjahr:"+this.birthYear;
+     }
     public String getFirstName() {
         return firstName;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Student student = (Student) o;
+        return Objects.equals(firstName, student.firstName) && Objects.equals(secondName, student.secondName);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(firstName, secondName);
     }
 
     public void setFirstName(String firstName) {
