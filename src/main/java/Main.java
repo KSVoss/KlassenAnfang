@@ -9,11 +9,27 @@ public class Main {
         Student kai = new Student("Kai","Voss",2);
         Student paula=new Student("Paula","Hase",3);
         Student[] allStudents ={eva,kai,paula};
+        Student[] allStudentsFromDB;
         StudentDB cgn_java_22= new StudentDB(allStudents);
-       // System.out.println(allStudents[0]);
-       // System.out.println(allStudents[1]);
-       // System.out.println(allStudents[2]);
+
         System.out.println(cgn_java_22.toString());
+        allStudentsFromDB= cgn_java_22.getAllStudents();
+
+        /* liefert random verschiedene Studenten?
+        for(int i=0;i<30;i++){
+            System.out.println(cgn_java_22.randomStudent().toString());
+        }
+        */
+
+        Student klaus=new Student("Klaus","Schneider",4);
+         System.out.println(cgn_java_22.toString());
+        cgn_java_22.add(klaus);
+         System.out.println(cgn_java_22.toString());
+        cgn_java_22.remove(paula);
+         System.out.println(cgn_java_22.toString());
+
+
+
 
 
         /*kai.setBirthYear(2005) ;
@@ -29,13 +45,7 @@ public class Main {
         System.out.println((kai));
         System.out.println(("Alle Daten von Kai:"+kai));
         */
-        if(eva.equals(paula)){
 
-            System.out.println("Sind gleich");
-        }
-        else {
-            System.out.println("Sind nicht glecih");
-        }
     }
 
 

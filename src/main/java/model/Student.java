@@ -43,12 +43,12 @@ public class Student {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Student student = (Student) o;
-        return Objects.equals(firstName, student.firstName) && Objects.equals(secondName, student.secondName);
+        return studentID == student.studentID && Objects.equals(firstName, student.firstName) && Objects.equals(secondName, student.secondName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(firstName, secondName);
+        return Objects.hash(firstName, secondName, studentID);
     }
 
     public void setFirstName(String firstName) {
